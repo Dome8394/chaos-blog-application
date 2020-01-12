@@ -2,7 +2,7 @@ package com.novatec.chaosapppersons.entities;
 
 public class Book {
 
-    //private String _id;
+    private String _id;
     private String title;
     private String isbn;
     private String authors;

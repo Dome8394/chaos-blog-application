@@ -14,8 +14,8 @@ public class PersonController {
 
     BookRentImpl bookRent = new BookRentImpl();
 
-    @RequestMapping(value = "/checkAvailableBooks/{title}", method = RequestMethod.GET)
-    public ResponseEntity<Book> checkBookAvailabilityByTitle(@PathVariable String title) {
+    @RequestMapping(value = "/checkAvailableBooks/", method = RequestMethod.GET, consumes = "application/json")
+    public ResponseEntity<Book> checkBookAvailabilityByTitle() {
         return bookRent.checkBooksAvailability();
     }
 }
