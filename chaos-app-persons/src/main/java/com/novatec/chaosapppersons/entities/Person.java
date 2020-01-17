@@ -1,12 +1,9 @@
 package com.novatec.chaosapppersons.entities;
 
-import org.springframework.data.mongodb.core.index.Indexed;
-
 public class Person {
 
     private String firstName;
     private String lastName;
-    @Indexed(unique = true)
     private String email;
 
     public String getFirstName() {

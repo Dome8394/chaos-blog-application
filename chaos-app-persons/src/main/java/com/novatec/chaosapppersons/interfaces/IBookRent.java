@@ -18,15 +18,14 @@ public interface IBookRent {
      * Checks if multiple books are available in the library
      * @return list of books that are available
      */
-    public ResponseEntity<Book> checkBooksAvailability();
+    public String checkBooksAvailability();
 
     /**
      * Rent a book from the library for a given amount of time
      * @param book must not be null
-     * @param rentingTime must not be null
      * @return true if book has been rent, false otherwise
      */
-    public boolean rentBook(Book book, int rentingTime);
+    public boolean rentBook(Book book);
 
     /**
      * Returns a book to the library

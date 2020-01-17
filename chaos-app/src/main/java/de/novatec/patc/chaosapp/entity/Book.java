@@ -1,7 +1,6 @@
 package de.novatec.patc.chaosapp.entity;
 
 import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -13,9 +12,18 @@ public class Book {
     @MongoId
     private String _id;
     private String title;
-    @Indexed(unique = true) //avoid duplicate entries based on isbn number
     private String isbn;
     private String authors;
+    private boolean rented;
+
+    public boolean getRented() {
+        return rented;
+    }
+
+    public void setRented(boolean rented) {
+        this.rented = rented;
+    }
+
 
     public String getTitle() {
         return title;
@@ -43,10 +51,11 @@ public class Book {
 
     public Book() {}
 
-    public Book(String title, String isbn, String authors) {
+    public Book(String title, String isbn, String authors, boolean rented) {
         this.title = title;
         this.isbn = isbn;
         this.authors = authors;
+        this.rented = rented;
     }
 
     @Override
